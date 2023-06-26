@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <Providers>
         <body
-          className={`${roboto.variable} min-h-screen font-roboto relative dark:bg-[#0f0f0f]`}
+          className={`${roboto.variable} min-h-screen font-roboto relative bg-[#0f0f0f]`}
         >
           <TopSideBar />
           {children}

@@ -58,5 +58,35 @@ export const sidebarData = {
         iconPath: "icons/outlined/arrow-down.svg",
       },
     ],
+    3: [
+      {
+        title: "Hamza Ahmed",
+        iconPath: "icons/colored/hamza.jpeg",
+      },
+      {
+        title: "Hamza Ahmed",
+        iconPath: "icons/colored/hamza.jpeg",
+      },
+      {
+        title: "Hamza Ahmed",
+        iconPath: "icons/colored/hamza.jpeg",
+      },
+      {
+        title: "Hamza Ahmed",
+        iconPath: "icons/colored/hamza.jpeg",
+      },
+      {
+        title: "Hamza Ahmed",
+        iconPath: "icons/colored/hamza.jpeg",
+      },
+      {
+        title: "Hamza Ahmed",
+        iconPath: "icons/colored/hamza.jpeg",
+      },
+      {
+        title: "Hamza Ahmed",
+        iconPath: "icons/colored/hamza.jpeg",
+      },
+    ],
   },
 };

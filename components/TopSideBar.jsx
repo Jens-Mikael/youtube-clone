@@ -66,8 +66,8 @@ const TopSideBar = () => {
       {isSidebarOpen ? (
         <>
           {/* OPEN */}
-          <div className="fixed top-[58px] flex min-h-screen flex-col overflow-scroll py-3">
-            <div className="gap-3 flex flex-col pl-3 pr-4">
+          <div className="fixed top-[58px] flex min-h-screen flex-col gap-3 overflow-scroll py-3">
+            <div className="flex flex-col gap-3 pl-3 pr-4">
               <div>
                 {sidebarData.open[1].map((i) => (
                   <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light first:bg-opacity-10 first:font-normal hover:bg-opacity-10 first:hover:bg-opacity-20">
@@ -93,6 +93,16 @@ const TopSideBar = () => {
                   </div>
                 ))}
               </div>
+            </div>
+            <div className=" border-t border-white border-opacity-20" />
+            <div className="flex flex-col pl-3 pr-4">
+              <div className="text-md px-3 py-1">Subscriptions</div>
+              {sidebarData.open[3].map((i) => (
+                <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+                  <img src={i.iconPath} className="h-6 rounded-full" />
+                  <div className=" text-sm">{i.title}</div>
+                </div>
+              ))}
             </div>
           </div>
         </>

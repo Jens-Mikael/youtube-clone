@@ -9,7 +9,6 @@ const OnClickAnimation = ({
   bgClassName,
 }) => {
   const [animation, setAnimation] = useState(false);
-  console.log(animation);
   return (
     <div onClick={() => setAnimation(true)} className={className}>
       <div
