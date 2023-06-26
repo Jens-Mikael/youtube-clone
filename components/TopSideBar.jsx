@@ -9,9 +9,9 @@ const TopSideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   return (
     <>
-      <div className="fixed top-0 flex w-full justify-between py-2 pl-2 pr-10">
+      <div className="fixed top-0 flex w-full justify-between py-2 pl-4 pr-10">
         {/* LOGO AND HAM */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-5">
           <button onClick={() => setIsSidebarOpen((prev) => !prev)}>
             <OnClickAnimation
               onClickProps="duration-500 group-active:bg-opacity-20"
@@ -66,15 +66,47 @@ const TopSideBar = () => {
       {isSidebarOpen ? (
         <>
           {/* OPEN */}
-          <div className="fixed top-[58px] min-h-screen w-40 overflow-scroll"></div>
+          <div className="fixed top-[58px] flex min-h-screen flex-col overflow-scroll py-3">
+            <div className="gap-3 flex flex-col pl-3 pr-4">
+              <div>
+                {sidebarData.open[1].map((i) => (
+                  <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light first:bg-opacity-10 first:font-normal hover:bg-opacity-10 first:hover:bg-opacity-20">
+                    <SVG
+                      className="h-6 fill-white"
+                      src={i.iconPath}
+                      loader={<div className="h-6 w-6" />}
+                    />
+                    <div className=" text-sm">{i.title}</div>
+                  </div>
+                ))}
+              </div>
+              <div className=" border-t border-white border-opacity-20" />
+              <div>
+                {sidebarData.open[2].map((i) => (
+                  <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+                    <SVG
+                      className="h-6 fill-white"
+                      src={i.iconPath}
+                      loader={<div className="h-6 w-6" />}
+                    />
+                    <div className=" text-sm">{i.title}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </>
       ) : (
         <>
           {/* CLOSED */}
           <div className="fixed top-[58px] flex min-h-screen min-w-fit flex-col overflow-scroll px-1">
             {sidebarData.closed.map((i) => (
-              <div className="flex w-16 cursor-pointer flex-col items-center rounded-xl py-5 hover:bg-white hover:bg-opacity-10">
-                <SVG className="h-6 fill-white" src={i.iconPath} loader={<div className="h-6" />} />
+              <div className=" flex w-16 cursor-pointer flex-col items-center rounded-xl py-5 hover:bg-white hover:bg-opacity-10">
+                <SVG
+                  className="h-6 fill-white"
+                  src={i.iconPath}
+                  loader={<div className="h-6" />}
+                />
                 <div className="text-2xs">{i.title}</div>
               </div>
             ))}
