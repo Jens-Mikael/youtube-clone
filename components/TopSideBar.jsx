@@ -9,7 +9,7 @@ const TopSideBar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   return (
     <>
-      <div className="fixed top-0 flex w-full justify-between py-2 pl-4 pr-10">
+      <div className="fixed top-0 z-10 flex w-full justify-between bg-[#0f0f0f] py-2 pl-4 pr-10">
         {/* LOGO AND HAM */}
         <div className="flex items-center gap-5">
           <button onClick={() => setIsSidebarOpen((prev) => !prev)}>
@@ -61,13 +61,15 @@ const TopSideBar = () => {
         </div>
       </div>
 
+      {/* ##################################################### */}
       {/* SIDEBAR */}
+      {/* ##################################################### */}
 
       {isSidebarOpen ? (
         <>
           {/* OPEN */}
-          <div className="fixed top-[58px] flex min-h-screen flex-col gap-3 overflow-scroll py-3">
-            <div className="flex flex-col gap-3 pl-3 pr-4">
+          <div className="fixed bottom-0 top-[58px] flex max-w-[236px] flex-col gap-3 overflow-y-auto bg-[#0f0f0f] pb-[18px]">
+            <div className="flex flex-col gap-3 pl-3">
               <div>
                 {sidebarData.open[1].map((i) => (
                   <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light first:bg-opacity-10 first:font-normal hover:bg-opacity-10 first:hover:bg-opacity-20">
@@ -80,7 +82,7 @@ const TopSideBar = () => {
                   </div>
                 ))}
               </div>
-              <div className=" border-t border-white border-opacity-20" />
+              <div className=" mr-3 border-t border-white border-opacity-20" />
               <div>
                 {sidebarData.open[2].map((i) => (
                   <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
@@ -94,7 +96,9 @@ const TopSideBar = () => {
                 ))}
               </div>
             </div>
-            <div className=" border-t border-white border-opacity-20" />
+
+            {/* SUBSRIPTIOMS */}
+            <div className=" mr-3 border-t border-white border-opacity-20" />
             <div className="flex flex-col pl-3 pr-4">
               <div className="text-md px-3 py-1">Subscriptions</div>
               {sidebarData.open[3].map((i) => (
@@ -103,6 +107,81 @@ const TopSideBar = () => {
                   <div className=" text-sm">{i.title}</div>
                 </div>
               ))}
+              <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+                <SVG
+                  className="h-6 fill-white"
+                  src="icons/outlined/arrow-down.svg"
+                  loader={<div className="h-6 w-6" />}
+                />
+                <div className=" text-sm">Show more</div>
+              </div>
+            </div>
+
+            {/* EXPLORE */}
+            <div className=" mr-3 border-t border-white border-opacity-20" />
+            <div className="flex flex-col pl-3 pr-4">
+              <div className="text-md px-3 py-1">Explore</div>
+              {sidebarData.open[4].map((i) => (
+                <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+                  <SVG
+                    className="h-6 fill-white"
+                    src={i.iconPath}
+                    loader={<div className="h-6 w-6" />}
+                  />
+                  <div className=" text-sm">{i.title}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* MORE FROM YT */}
+            <div className=" mr-3 border-t border-white border-opacity-20" />
+            <div className="flex flex-col pl-3 pr-4">
+              <div className="text-md px-3 py-1">More from Youtube</div>
+              {sidebarData.open[5].map((i) => (
+                <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+                  <SVG
+                    className="h-6 fill-white"
+                    src={i.iconPath}
+                    loader={<div className="h-6 w-6" />}
+                  />
+                  <div className=" text-sm">{i.title}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* SETTINGS ETC. */}
+            <div className=" mr-3 border-t border-white border-opacity-20" />
+            <div className="flex flex-col pl-3 pr-4">
+              {sidebarData.open[6].map((i) => (
+                <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+                  <SVG
+                    className="h-6 fill-white"
+                    src={i.iconPath}
+                    loader={<div className="h-6 w-6" />}
+                  />
+                  <div className="text-sm">{i.title}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* FOOTER */}
+            <div className=" mr-3 border-t border-white border-opacity-20" />
+            <div className="flex flex-col gap-[18px]">
+              <div className="flex flex-col gap-3 text-sidebarFooter font-semibold text-[#aaaaaa]">
+                <div className="flex max-w-[204px] flex-wrap items-center gap-1 px-6 ">
+                  {sidebarData.open.footer[1].map((i) => (
+                    <div className=" cursor-pointer">{i}</div>
+                  ))}
+                </div>
+                <div className="flex flex-wrap items-center gap-1 pl-6 ">
+                  {sidebarData.open.footer[2].map((i) => (
+                    <div className=" cursor-pointer">{i}</div>
+                  ))}
+                </div>
+              </div>
+              <div className="px-6 text-xs text-[#717171]">
+                © 2023 Google LLC
+              </div>
             </div>
           </div>
         </>

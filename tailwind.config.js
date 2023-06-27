@@ -11,8 +11,9 @@ module.exports = {
         roboto: ["var(--font-roboto)"],
       },
       fontSize: {
-        "2xs" : ["10px", "14px"]
-      }
+        "2xs": ["10px", "14px"],
+        "sidebarFooter": ["13px", "18px"],
+      },
     },
   },
   plugins: [],
