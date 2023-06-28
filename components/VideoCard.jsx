@@ -10,8 +10,8 @@ const VideoCard = ({
   timeAgo,
 }) => {
   return (
-    <div className="flex flex-col gap-3">
-      <img className="max-h-[203px] max-w-[360px] rounded-xl" src={imagePath} />
+    <div className="mb-10 flex flex-col gap-3">
+      <img className="max-h-[225px] max-w-[400px] rounded-xl object-cover" src={imagePath} />
       <div className="group flex cursor-pointer justify-between">
         <div className="flex gap-3">
           <div>

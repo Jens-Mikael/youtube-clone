@@ -7,8 +7,9 @@ const Searchbar = () => {
   const [input, setInput] = useState("");
 
   return (
-    <div className="mx-1 flex w-full max-w-[519px]">
+    <div className="mx-1 flex w-full max-w-[728px]">
       {/* SEARCH BAR */}
+      <div className="w-10 h-full" />
       {/* INPUT  */}
       <div
         className={`${!focus && "ml-[29px]"} relative flex flex-1 items-center rounded-l-full bg-[#121212]`}
@@ -20,7 +21,7 @@ const Searchbar = () => {
           onBlur={() => setFocus(false)}
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          className="peer min-w-full  rounded-l-full border border-white border-opacity-10 bg-transparent py-2 pl-5 pr-[60px] outline-none focus:border-sky-600 focus:pl-[49px]"
+          className="peer max-w-full w-full rounded-l-full border border-white border-opacity-10 bg-transparent py-2 pl-5 pr-[60px] outline-none focus:border-sky-600 focus:pl-[49px]"
         />
 
         <div className="absolute left-0 ml-4 mr-3 hidden peer-focus:inline">

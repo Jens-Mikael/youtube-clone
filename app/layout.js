@@ -1,7 +1,8 @@
 import "./globals.css";
 import { Roboto } from "next/font/google";
 import Providers from "@/components/Providers";
-import TopSideBar from "@/components/TopSideBar";
+import Topbar from "@/components/Topbar";
+import Sidebar from "@/components/Sidebar";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -12,7 +13,7 @@ const roboto = Roboto({
 export const metadata = {
   title: "Youtube",
   icons: {
-    icon: "icons/youtube.svg",
+    icon: "icons/colored/youtube.svg",
   },
 };
 
@@ -23,7 +24,8 @@ export default function RootLayout({ children }) {
         <body
           className={`${roboto.variable} min-h-screen font-roboto relative bg-[#0f0f0f]`}
         >
-          <TopSideBar />
+          <Topbar />
+          <Sidebar />
           {children}
         </body>
       </Providers>
