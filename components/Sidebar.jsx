@@ -1,14 +1,44 @@
 "use client";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { specific, toggle } from "@/redux/slices/sidebarSlice";
 import SVG from "react-inlinesvg";
 import { sidebarData } from "@/data";
+import OnClickAnimation from "./OnClickAnimation";
 
 const Sidebar = () => {
   const isSidebarOpen = useSelector((state) => state.sidebar.value);
+  const dispatch = useDispatch();
 
-  if (isSidebarOpen)
-    return (
-      <div className="fixed bottom-0 top-[58px] flex max-w-[236px] flex-col gap-3 overflow-y-auto bg-[#0f0f0f] pb-[18px]">
+  return (
+    <>
+      <div
+        className={`${
+          !isSidebarOpen && "-translate-x-full"
+        } fixed bottom-0  top-0 z-20 flex max-w-[236px] flex-col gap-3 overflow-y-auto bg-[#0f0f0f] pb-[18px] transition-transform duration-200 xl:top-[58px] xl:transition-none`}
+      >
+        <div className="my-[9px] ml-4 flex items-center gap-5 xl:hidden">
+          <button onClick={() => dispatch(toggle())}>
+            <OnClickAnimation
+              onClickProps="duration-500 group-active:bg-opacity-20"
+              notOnClickProps="duration-100 group-hover:bg-opacity-10"
+              bgClassName="bg-white absolute inset-0 -z-10 rounded-full transition-all bg-opacity-0  group-active:bg-opacity-20"
+              className="group relative flex cursor-pointer items-center rounded-full p-2"
+            >
+              <SVG
+                src="icons/outlined/hamburger-menu.svg"
+                className="h-6 fill-white"
+                loader={<div className="w-6" />}
+              />
+            </OnClickAnimation>
+          </button>
+          <div>
+            <SVG
+              className="h-5 fill-white"
+              src="icons/colored/youtube-logo.svg"
+              loader={<div className="w-[90px]" />}
+            />
+          </div>
+        </div>
         <div className="flex flex-col gap-3 pl-3">
           <div>
             {sidebarData.open[1].map((i) => (
@@ -31,7 +61,7 @@ const Sidebar = () => {
                   src={i.iconPath}
                   loader={<div className="h-6 w-6" />}
                 />
-                <div className=" text-sm">{i.title}</div>
+                <div className="text-sm">{i.title}</div>
               </div>
             ))}
           </div>
@@ -122,10 +152,21 @@ const Sidebar = () => {
           <div className="px-6 text-xs text-[#717171]">© 2023 Google LLC</div>
         </div>
       </div>
-    );
-  else
-    return (
-      <div className="fixed top-[58px] flex min-h-screen min-w-fit flex-col overflow-scroll px-1">
+
+      {/* OPACITY EFFECT FOR SCREENS LOWER THAN XL */}
+
+      <div
+        className={`${
+          isSidebarOpen ? "z-10 opacity-50" : "z-[-1] opacity-0"
+        } absolute inset-0 bg-black transition-opacity xl:hidden`}
+        onClick={() => dispatch(specific(false))}
+      />
+
+      <div
+        className={`${
+          isSidebarOpen && "-translate-x-full"
+        } fixed top-[58px] hidden min-h-screen min-w-fit flex-col overflow-scroll px-1 md:flex`}
+      >
         {sidebarData.closed.map((i) => (
           <div className=" flex w-16 cursor-pointer flex-col items-center rounded-xl py-5 hover:bg-white hover:bg-opacity-10">
             <SVG
@@ -137,7 +178,8 @@ const Sidebar = () => {
           </div>
         ))}
       </div>
-    );
+    </>
+  );
 };
 
 export default Sidebar;

@@ -1,12 +1,20 @@
 "use client";
-import { toggle } from "@/redux/slices/sidebarSlice";
+import { specific, toggle } from "@/redux/slices/sidebarSlice";
 import OnClickAnimation from "./OnClickAnimation";
 import Searchbar from "./Searchbar";
 import SVG from "react-inlinesvg";
 import { useDispatch } from "react-redux";
+import { useMediaQuery } from "react-responsive";
+import { useEffect } from "react";
 
 const Topbar = () => {
   const dispatch = useDispatch();
+  const defaultHideSidebar = useMediaQuery({ query: "(max-width: 1280px)" });
+
+  useEffect(() => {
+    dispatch(specific(!defaultHideSidebar));
+
+  })
 
   return (
     <>
