@@ -9,7 +9,7 @@ export default function Home() {
     <div>
       <div className="flex min-h-screen justify-center">
         <div
-          className={` mt-[56px] ${isSidebarOpen ? "md:ml-[72px] xl:ml-[240px]" : "md:ml-[72px]"} grid  w-fit grid-cols-1 gap-3 px-4 py-8 sm:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4`}
+          className={` mt-[100px] ${isSidebarOpen ? "md:ml-[72px] xl:ml-[240px]" : "md:ml-[72px]"} grid  w-fit grid-cols-1 gap-3 pl-4 pr-8 py-8 sm:grid-cols-2 lg:grid-cols-3  xl:grid-cols-4`}
         >
           {videoCardData.map((i) => (
             <VideoCard
@@ -33,7 +33,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-      <div class="min-h-screen"></div>
     </div>
   );
 }

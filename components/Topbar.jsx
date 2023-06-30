@@ -18,7 +18,7 @@ const Topbar = () => {
 
   return (
     <>
-      <div className="fixed top-0 z-10 flex w-full justify-between bg-[#0f0f0f] py-2 pl-4 pr-10">
+      <div className="fixed top-0 z-10 flex w-full justify-between bg-[#0f0f0f] py-2 pl-4 pr-8">
         {/* LOGO AND HAM */}
         <div className="flex items-center gap-5">
           <button onClick={() => dispatch(toggle())}>

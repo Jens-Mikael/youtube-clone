@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import Providers from "@/components/Providers";
 import Topbar from "@/components/Topbar";
 import Sidebar from "@/components/Sidebar";
+import SuggestionBar from "@/components/SuggestionBar";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         >
           <Topbar />
           <Sidebar />
+          <SuggestionBar />
           {children}
         </body>
       </Providers>

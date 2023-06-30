@@ -249,3 +249,24 @@ export const videoCardData = [
     timeAgo: "2 days",
   },
 ];
+
+export const suggestionBarData = [
+  "All",
+  "Music",
+  "Mixes",
+  "Gaming",
+  "Electric guitar",
+  "Fingerstyle guitar",
+  "History",
+  "Physics",
+  "Computer programming",
+  "CrossFit",
+  "Weight training",
+  "Drones",
+  "Live",
+  "Conversation",
+  "Action-adventure games",
+  "Recently uploaded",
+  "Watched",
+  "New to you",
+];
