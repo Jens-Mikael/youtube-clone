@@ -64,7 +64,7 @@ const Topbar = () => {
           <div className="flex items-center">
             <img
               src="icons/colored/profile-pic.jpeg"
-              className="h-8 rounded-full"
+              className="h-8 min-w-8 rounded-full"
             />
           </div>
         </div>
