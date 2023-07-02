@@ -42,7 +42,10 @@ const Sidebar = () => {
         <div className="flex flex-col gap-3 pl-3">
           <div>
             {sidebarData.open[1].map((i) => (
-              <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light first:bg-opacity-10 first:font-normal hover:bg-opacity-10 first:hover:bg-opacity-20">
+              <div
+                key={i.title}
+                className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light first:bg-opacity-10 first:font-normal hover:bg-opacity-10 first:hover:bg-opacity-20"
+              >
                 <SVG
                   className="h-6 fill-white"
                   src={i.iconPath}
@@ -55,7 +58,10 @@ const Sidebar = () => {
           <div className=" mr-3 border-t border-white border-opacity-20" />
           <div>
             {sidebarData.open[2].map((i) => (
-              <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+              <div
+                key={i.title}
+                className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10"
+              >
                 <SVG
                   className="h-6 fill-white"
                   src={i.iconPath}
@@ -67,12 +73,15 @@ const Sidebar = () => {
           </div>
         </div>
 
-        {/* SUBSRIPTIOMS */}
+        {/* SUBSRIPTIONS */}
         <div className=" mr-3 border-t border-white border-opacity-20" />
         <div className="flex flex-col pl-3 pr-4">
           <div className="text-md px-3 py-1">Subscriptions</div>
-          {sidebarData.open[3].map((i) => (
-            <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+          {sidebarData.open[3].map((i, index) => (
+            <div
+              key={index}
+              className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10"
+            >
               <img src={i.iconPath} className="h-6 rounded-full" />
               <div className=" text-sm">{i.title}</div>
             </div>
@@ -92,7 +101,10 @@ const Sidebar = () => {
         <div className="flex flex-col pl-3 pr-4">
           <div className="text-md px-3 py-1">Explore</div>
           {sidebarData.open[4].map((i) => (
-            <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+            <div
+              key={i.title}
+              className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10"
+            >
               <SVG
                 className="h-6 fill-white"
                 src={i.iconPath}
@@ -108,7 +120,10 @@ const Sidebar = () => {
         <div className="flex flex-col pl-3 pr-4">
           <div className="text-md px-3 py-1">More from Youtube</div>
           {sidebarData.open[5].map((i) => (
-            <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+            <div
+              key={i.title}
+              className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10"
+            >
               <SVG
                 className="h-6 fill-white"
                 src={i.iconPath}
@@ -123,7 +138,10 @@ const Sidebar = () => {
         <div className=" mr-3 border-t border-white border-opacity-20" />
         <div className="flex flex-col pl-3 pr-4">
           {sidebarData.open[6].map((i) => (
-            <div className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10">
+            <div
+              key={i.title}
+              className="flex h-10 w-[204px] cursor-pointer items-center gap-5 rounded-lg bg-white bg-opacity-0 px-3 py-2 font-light hover:bg-opacity-10"
+            >
               <SVG
                 className="h-6 fill-white"
                 src={i.iconPath}
@@ -140,12 +158,16 @@ const Sidebar = () => {
           <div className="flex flex-col gap-3 text-sidebarFooter font-semibold text-[#aaaaaa]">
             <div className="flex max-w-[204px] flex-wrap items-center gap-1 px-6 ">
               {sidebarData.open.footer[1].map((i) => (
-                <div className=" cursor-pointer">{i}</div>
+                <div key={i} className=" cursor-pointer">
+                  {i}
+                </div>
               ))}
             </div>
             <div className="flex flex-wrap items-center gap-1 pl-6 ">
               {sidebarData.open.footer[2].map((i) => (
-                <div className=" cursor-pointer">{i}</div>
+                <div key={i} className=" cursor-pointer">
+                  {i}
+                </div>
               ))}
             </div>
           </div>
@@ -168,7 +190,10 @@ const Sidebar = () => {
         } fixed top-[58px] hidden min-h-screen min-w-fit flex-col overflow-scroll px-1 md:flex`}
       >
         {sidebarData.closed.map((i) => (
-          <div className=" flex w-16 cursor-pointer flex-col items-center rounded-xl py-5 hover:bg-white hover:bg-opacity-10">
+          <div
+            key={i.title}
+            className=" flex w-16 cursor-pointer flex-col items-center rounded-xl py-5 hover:bg-white hover:bg-opacity-10"
+          >
             <SVG
               className="h-6 fill-white"
               src={i.iconPath}

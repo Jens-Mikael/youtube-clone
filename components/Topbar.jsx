@@ -46,7 +46,7 @@ const Topbar = () => {
 
         <Searchbar />
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 w-full max-w-[185px] justify-end">
           <div className="flex items-center rounded-full p-2 hover:bg-white hover:bg-opacity-10">
             <SVG
               src="icons/outlined/add-video.svg"
@@ -61,10 +61,10 @@ const Topbar = () => {
               loader={<div className="w-6 " />}
             />
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center w-8">
             <img
               src="icons/colored/profile-pic.jpeg"
-              className="h-8 min-w-8 rounded-full"
+              className="h-8  rounded-full"
             />
           </div>
         </div>

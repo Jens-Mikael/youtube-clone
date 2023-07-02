@@ -31,8 +31,8 @@ const Searchbar = () => {
         >
           <SVG
             src="icons/outlined/search-glass.svg"
-            className="h-6 fill-white"
-            loader={<div className="w-6" />}
+            className="h-[26px] fill-white"
+            loader={<div className="w-[26px]" />}
           />
         </div>
       </div>
@@ -41,7 +41,7 @@ const Searchbar = () => {
       <div
         className={`${
           isSearchbarOpen
-            ? "absolute inset-x-0 z-30 bg-[#0f0f0f] px-3"
+            ? "absolute inset-x-0 z-30 pb-2 bg-[#0f0f0f] px-3"
             : "hidden"
         } mx-1 flex w-full max-w-[728px] gap-2 md:static  md:z-0 md:flex  md:bg-transparent`}
       >

@@ -193,14 +193,6 @@ export const videoCardData = [
     timeAgo: "2 days",
   },
   {
-    imagePath: "dummy-images/4.jpg",
-    profilePicPath: "icons/colored/hamza.jpeg",
-    title: "Lorem Ipsum dolor sit amet",
-    creator: "Hamza Ahmed",
-    views: "14K",
-    timeAgo: "2 days",
-  },
-  {
     imagePath: "dummy-images/5.jpg",
     profilePicPath: "icons/colored/hamza.jpeg",
     title: "Lorem Ipsum dolor sit amet",
